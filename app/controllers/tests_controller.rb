@@ -3,11 +3,11 @@ class TestsController < ApplicationController
   end
 
   def fail
-    render :layout => nil
+    render :text => 'fail'
   end
 
   def win
-    render :layout => nil
+    render :text => 'win'
   end
 
   def delete_me
