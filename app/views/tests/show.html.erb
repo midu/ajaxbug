@@ -1,0 +1,24 @@
+<%= link_to 'click me', '#', :id => 'click-me' %>
+
+<p id="result"></p>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+  $( function () {
+    $( '#click-me' ).click( function ( e ) {
+      e.preventDefault();
+
+      $.ajax( {
+        url: "<%= delete_me_tests_path %>"
+      , type: 'DELETE'
+      , success: function ( data ) {
+          $( '#result' ).html( data );
+        }
+      , error: function ( ) {
+          $( '#result' ).html( 'error' );
+        }
+      } );
+    } );
+  });
+</script>
