@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-ChromiumDeleteAjax::Application.load_tasks
+AjaxBug::Application.load_tasks
