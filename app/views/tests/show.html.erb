@@ -1,6 +1,17 @@
-<%= link_to 'click me', '#', :id => 'click-me' %>
+<p>
+  Request verb:
+  <select id="type">
+    <option value="GET">GET</option>
+    <option value="POST">POST</option>
+    <option value="DELETE">DELETE</option>
+    <option value="PUT">PUT</option>
+  </select>
+  <%= link_to 'Click me to start the request', '#', :id => 'click-me' %>
+<p>
 
-<p id="result"></p>
+<p>
+  Verb used to retrieving the redirection: <span id="result"></span> (should be GET)
+</p>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 
@@ -10,8 +21,8 @@
       e.preventDefault();
 
       $.ajax( {
-        url: "<%= delete_me_tests_path %>"
-      , type: 'DELETE'
+        url: "<%= touch_me_tests_path %>"
+      , type: $('#type').val()
       , success: function ( data ) {
           $( '#result' ).html( data );
         }

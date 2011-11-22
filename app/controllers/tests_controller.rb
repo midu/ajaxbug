@@ -2,15 +2,13 @@ class TestsController < ApplicationController
   def show
   end
 
-  def fail
-    render :text => 'fail'
+  def delete; render :text => 'delete'; end
+  def put; render :text => 'put'; end
+  def get; render :text => 'get'; end
+  def post; render :text => 'post'; end
+
+  def touch_me
+    redirect_to redirect_tests_path
   end
 
-  def win
-    render :text => 'win'
-  end
-
-  def delete_me
-    redirect_to win_tests_path
-  end
 end
